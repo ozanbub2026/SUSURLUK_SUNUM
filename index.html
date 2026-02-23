@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Susurluk Jeotermal İşletme Sahası | Teknik Yatırım Sunumu</title>
+<title>Susurluk Jeotermal İşletme Sahası | Teknik Sunum</title>
 
 <style>
   :root {
@@ -12,7 +12,7 @@
     --accent-color: #38bdf8;
     --text-main: #f8fafc;
     --text-dim: #94a3b8;
-    --highlight: #fbbf24; /* Teknik vurgu rengi */
+    --highlight: #fbbf24;
   }
 
   body {
@@ -20,24 +20,22 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--primary-bg);
     color: var(--text-main);
-    line-height: 1.6;
+    line-height: 1.5;
   }
 
-  /* HERO - ORANSAL KÜÇÜLTME */
+  /* HERO: TAM BOYUT VİDEO */
   .hero-container {
     width: 100%;
     background: #000;
-    line-height: 0;
   }
 
   .hero-container video {
     width: 100%;
     height: auto;
-    max-height: 80vh; /* Çok dikey ekranlarda aşırı büyümemesi için */
     display: block;
   }
 
-  /* TEKNİK ÖZET BARI (MAVİ KART) */
+  /* TEKNİK ÖZET KARTI: HERO HEMEN ALTI */
   .tech-summary-bar {
     background: var(--accent-color);
     color: #0f172a;
@@ -46,144 +44,121 @@
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 20px;
     font-weight: bold;
-    text-align: center;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    border-bottom: 5px solid #1e293b;
   }
 
-  .tech-item span {
-    display: block;
-    font-size: 20px;
-    font-family: 'Consolas', monospace;
+  .tech-item {
+    border-left: 2px solid rgba(15, 23, 42, 0.2);
+    padding-left: 15px;
   }
 
   .tech-item small {
     display: block;
     font-size: 11px;
     text-transform: uppercase;
+    letter-spacing: 1px;
     opacity: 0.8;
-    margin-bottom: 5px;
+  }
+
+  .tech-item span {
+    font-size: 18px;
+    font-family: 'Consolas', monospace;
   }
 
   /* KONTEYNER */
   .container {
-    max-width: 1300px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 40px;
+    padding: 40px 20px;
   }
 
   h2 {
-    font-size: 28px;
-    border-left: 5px solid var(--accent-color);
-    padding-left: 15px;
-    margin-bottom: 30px;
+    font-size: 24px;
     color: var(--accent-color);
+    border-left: 4px solid var(--accent-color);
+    padding-left: 15px;
+    margin-bottom: 25px;
     text-transform: uppercase;
   }
 
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 30px;
-    margin-bottom: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
   }
 
   .card {
     background: var(--card-bg);
-    padding: 35px;
-    border-radius: 12px;
-  }
-
-  /* TEKNİK VURGU (AMBER) */
-  .tech-highlight {
-    background: rgba(251, 191, 36, 0.1);
-    border-left: 5px solid var(--highlight);
-    padding: 20px;
-    margin-top: 15px;
-    border-radius: 0 8px 8px 0;
-  }
-
-  .tech-highlight strong {
-    color: var(--highlight);
-    display: block;
-    margin-bottom: 5px;
-    font-size: 17px;
-  }
-
-  /* RUHSAT VE HARİTA BÖLÜMÜ */
-  .visual-row {
-    display: flex;
-    gap: 30px;
-    margin-bottom: 60px;
-    align-items: stretch;
-  }
-
-  .visual-content {
-    flex: 1;
-    background: var(--card-bg);
-    padding: 30px;
-    border-radius: 12px;
-  }
-
-  .visual-img-container {
-    flex: 1;
-    text-align: center;
-    background: #1e293b;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-  }
-
-  .visual-img-container img {
-    max-width: 100%;
-    max-height: 600px;
+    padding: 25px;
     border-radius: 8px;
   }
 
-  /* VİDEO GRID */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .data-table td {
+    padding: 10px 5px;
+    border-bottom: 1px solid #334155;
+    font-size: 14px;
+  }
+
+  .data-table td:first-child {
+    font-weight: bold;
+    color: var(--text-dim);
+    width: 50%;
+  }
+
+  /* GÖRSEL BLOKLAR */
+  .visual-block {
+    margin-bottom: 40px;
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .visual-block img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  }
+
+  /* PDF VE VİDEO */
+  .pdf-grid {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .pdf-link {
+    background: #334155;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.2s;
+  }
+
+  .pdf-link:hover { background: var(--accent-color); color: #000; }
+
   .video-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 20px;
-    margin-top: 30px;
-  }
-
-  .video-card {
-    background: var(--card-bg);
-    padding: 10px;
-    border-radius: 10px;
-    text-align: center;
-  }
-
-  .video-card video {
-    width: 100%;
-    border-radius: 6px;
-  }
-
-  .pdf-buttons {
-    display: flex;
     gap: 15px;
-    margin-top: 25px;
-    flex-wrap: wrap;
   }
 
-  .pdf-btn {
-    background: #334155;
-    padding: 14px 22px;
-    border-radius: 8px;
-    text-decoration: none;
-    color: white;
-    font-weight: 600;
-    font-size: 14px;
-    transition: 0.3s;
-  }
+  .video-card video { width: 100%; border-radius: 6px; }
 
-  .pdf-btn:hover { background: var(--accent-color); color: #0f172a; }
-
-  @media (max-width: 900px) {
-    .visual-row { flex-direction: column; }
-    .grid { grid-template-columns: 1fr; }
+  @media (max-width: 768px) {
+    .tech-summary-bar { grid-template-columns: repeat(2, 1fr); }
   }
 </style>
 </head>
@@ -198,104 +173,98 @@
 
 <div class="tech-summary-bar">
   <div class="tech-item"><small>Ruhsat Alanı</small><span>400 Hektar</span></div>
+  <div class="tech-item"><small>Mera Rezervi</small><span>2200 Dönüm</span></div>
   <div class="tech-item"><small>TD (Toplam Derinlik)</small><span>1425 Metre</span></div>
-  <div class="tech-item"><small>Statik Sıcaklık</small><span>66.02 °C</span></div>
-  <div class="tech-item"><small>Test Debisi</small><span>80-100 L/sn</span></div>
-  <div class="tech-item"><small>Gradyan Katsayısı</small><span>2.5x Normal</span></div>
-  <div class="tech-item"><small>Liman Mesafesi</small><span>30 KM</span></div>
+  <div class="tech-item"><small>Q-Kompresör (Gözlemlenen)</small><span>80-100 L/sn</span></div>
+  <div class="tech-item"><small>Q-Pompa (Aktüel)</small><span>25 L/sn</span></div>
+  <div class="tech-item"><small>Bandırma Limanı</small><span>30 KM</span></div>
 </div>
 
 <div class="container">
 
-  <section class="visual-row">
-    <div class="visual-content">
-      <h2>İşletme Ruhsatı ve Saha Statüsü</h2>
-      <p>Balıkesir–Bursa–İstanbul anayolu üzerinde, Bandırma Limanı’na 30 km mesafede bulunan sahada <strong>400 hektar</strong> jeotermal işletme ruhsatı mevcuttur.</p>
-      <p>Saha içerisinde yatırım tahsisine uygun yaklaşık <strong>2200 dönüm mera alanı</strong> bulunmaktadır. Mevcut ve izinleri alınmış 2. sondaj lokasyonu da mera alanı içerisindedir.</p>
-      <div class="tech-highlight">
-        <strong>Jeotermal Enerji Potansiyeli:</strong>
-        Kuyu içi gradyan verileri, sahanın sadece termal turizm veya seracılık değil, derin sondajlarla <strong>Jeotermal Enerji Santrali (JES)</strong> kurulumu için yüksek potansiyel taşıdığını kanıtlamaktadır.
+  <section>
+    <h2>Kuyu Konstrüksiyonu ve Akışkan Parametreleri</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Ümiteli-1 Kuyu Mimarisi</h3>
+        <table class="data-table">
+          <tr><td>Toplam Derinlik</td><td>1425 m</td></tr>
+          <tr><td>0 - 562 m</td><td>Borulu / Betonlu</td></tr>
+          <tr><td>562 - 1000 m</td><td>Kapalı Casing</td></tr>
+          <tr><td>1000 - 1425 m</td><td>Filtreli Casing / Üretim Borulu</td></tr>
+          <tr><td>İşletme Debisi (Ruhsat)</td><td>50 L/sn</td></tr>
+          <tr><td>Kuyu İçi Sıcaklık</td><td>66,02 °C</td></tr>
+        </table>
       </div>
-      <div class="pdf-buttons">
-        <a href="umiteli_kuyu_raporu_2020.pdf" class="pdf-btn" target="_blank">📄 Kuyu Raporu (2020)</a>
-        <a href="umiteli_kuyu_statik_2020.pdf" class="pdf-btn" target="_blank">📄 Statik Ölçüm (2020)</a>
-        <a href="UMITELI_PT_OLCUM_RAPORU_26.12.2025(1657).pdf" class="pdf-btn" target="_blank">📄 PT Raporu (2025)</a>
+      <div class="card">
+        <h3>Şubat 2026 Test Verileri</h3>
+        <p>25 bar basınçlı kompresör ile 150m seviyesinden yapılan üretim testinde <strong>80-100 L/sn</strong> debi gözlemlenmiş; savakta <strong>55,7 °C</strong> sıcaklık ölçülmüştür.</p>
+        <p>170 metreye indirilen <strong>38kW / 25 L/sn</strong> kapasiteli pompa ile tam kapasite debi ve <strong>51 °C</strong> sürekli akış sıcaklığı elde edilmiştir.</p>
+        <p style="color: var(--highlight); border: 1px solid var(--highlight); padding: 10px; border-radius: 4px; font-size: 13px;">
+          <strong>Teknik Projeksiyon:</strong> Kuyu hidroliği ve kuyu içi yapısı, yüksek kapasiteli pompa sistemleri ile <strong>45-50 L/sn</strong> debiye ulaşılmasını desteklemektedir.
+        </p>
       </div>
-    </div>
-    <div class="visual-img-container">
-      <img src="ruhsat.jpg" alt="İşletme Ruhsatı">
     </div>
   </section>
 
   <section>
-    <h2>Kuyu Mimarisi ve Termal Gradyan Anomalileri</h2>
+    <h2>Mera Rezervleri ve Kuyu Lokasyon Analizi</h2>
+    <div class="visual-block">
+      <img src="mera_alanlarini_gosterir_harita.jpg" alt="Mera Haritası">
+      <p style="font-size: 13px; color: var(--text-dim); margin-top: 10px;">Tahsis edilebilir 2200 dönüm mera ve sondaj lokasyonlarını gösterir teknik harita.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Resmi İşletme Ruhsatı ve Teknik Raporlar</h2>
+    <div class="visual-block">
+      <img src="ruhsat.jpg" alt="Jeotermal Ruhsatı" style="max-width: 800px;">
+      <div class="pdf-grid">
+        <a href="umiteli_kuyu_raporu_2020.pdf" class="pdf-link" target="_blank">📄 Kuyu Tamamlama (2020)</a>
+        <a href="umiteli_kuyu_statik_2020.pdf" class="pdf-link" target="_blank">📄 Statik PT Ölçümü (2020)</a>
+        <a href="UMITELI_PT_OLCUM_RAPORU_26.12.2025(1657).pdf" class="pdf-link" target="_blank">📄 Dinamik PT Ölçümü (2025)</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Lojistik, Altyapı ve Saha Statüsü</h2>
     <div class="grid">
       <div class="card">
-        <h3>Ümiteli-1 Kuyu Mimarisi</h3>
-        <p>Sondaj toplam 1425 metre derinliğe sahiptir. 0-562 metre arası borulu betonlu izolasyon sağlanmış, 1000m sonrası filtreli casing ile üretim hattı tamamlanmıştır.</p>
-        <div class="tech-highlight">
-          <strong>Gradyan İvmelenmesi (GSE Verisi):</strong>
-          1060-1280m arası gradyan $2.2^{\circ}C/100m$ iken, 1280m'den sonra gradyanın **$5.1^{\circ}C/100m$** değerine sıçraması, derin seviyelerde çok daha yüksek enerjili bir rezervuarın varlığına işaret etmektedir.
-        </div>
+        <h3>Saha ve Altyapı Olanakları</h3>
+        <p>Bölge resmi olarak <strong>"Seracılık ve Turizm Bölgesi"</strong> ilan edilmiştir. Yatırım alanında yüksek gerilim hattı ve şehir şebekesi mevcuttur. 200m derinlikteki yüksek debili soğuk su akiferi ve Susurluk Çayı operasyonel su ihtiyacını karşılamaktadır.</p>
       </div>
-      
       <div class="card">
-        <h3>Sıcaklık ve Basınç Rejimi</h3>
-        <p>Resmi işletme verileri 66,02 °C sıcaklık ve 50 lt/sn debi ile kaydedilmiştir.</p>
-        <div class="tech-highlight">
-          <strong>Anomali Vurgusu (Apex & Jeoline):</strong>
-          Son 100m'deki 7,16 °C artış, normal yer içi gradyanın **2,5 katıdır**. Jeoline 2025 raporunda 1230-1250m aralığındaki $+0.0940^{\circ}C/m$ gradyan artışı, derin sondajlar için yüksek sıcaklık potansiyelini teknik olarak doğrulamaktadır.
-        </div>
+        <h3>Bölgesel Termal Potansiyel</h3>
+        <ul style="font-size: 14px; color: var(--text-dim); padding-left: 20px;">
+          <li>5 km: Kepekler Kaplıcası (68 °C - 20 L/sn)</li>
+          <li>1.5 km: Özel Sondaj ve Devremülk Tesisleri</li>
+          <li>20 km: Yıldız Kaplıcaları (85 °C)</li>
+          <li>Bandırma Limanı: 30 km (Anayol bağlantılı)</li>
+        </ul>
       </div>
     </div>
-  </section>
-
-  <section class="visual-row">
-    <div class="visual-img-container" style="flex: 1.5;">
-      <img src="mera_alanlarini_gosterir_harita.jpg" alt="Mera Haritası">
-    </div>
-    <div class="visual-content">
-      <h2>Saha ve Altyapı Avantajları</h2>
-      <p>Sondajların mera alanında bulunması, "Ot Bedeli" karşılığında düşük maliyetli arazi tahsisine olanak sağlar. Bölge resmi olarak <strong>"Seracılık ve Turizm Bölgesi"</strong> statüsündedir.</p>
-      <ul>
-        <li>Bandırma Limanı: 30 KM (Lojistik güç)</li>
-        <li>Soğuk Su: 200m civarında yüksek debili kaynak</li>
-        <li>Enerji Altyapısı: Yüksek gerilim ve şehir şebekesi mevcut.</li>
-        <li>Çevresel Kaynaklar: Susurluk Çayı'na yakınlık.</li>
-      </ul>
+    
+    <div class="card" style="border: 1px solid var(--accent-color); margin-top: 20px;">
+      <h3>Hukuki Durum ve Devir</h3>
+      <p>İşletme ruhsatı, sadece bu proje için kurulmuş, borçsuz ve harçsuz bir SPV şirket üzerindedir. Satış işlemi <strong>şirket devri</strong> olarak gerçekleştirilecektir. İzni alınan 2. sondaj lokasyonunda tamamlanacak kuyuda <strong>70-90 °C</strong> sıcaklık ve yüksek debi potansiyeli öngörülmektedir.</p>
     </div>
   </section>
 
-  <section style="margin-top: 40px;">
-    <h2>Saha Test ve Operasyon Görüntüleri</h2>
+  <section>
+    <h2>Saha Operasyon ve Test Görüntüleri</h2>
     <div class="video-grid">
-      <div class="video-card">
-        <small>Pompa Üretim Testi</small>
-        <video controls><source src="pompa1.mp4" type="video/mp4"></video>
-      </div>
-      <div class="video-card">
-        <small>Kompresör Debi Gözlemi</small>
-        <video controls><source src="kompresor-debi.mp4" type="video/mp4"></video>
-      </div>
-      <div class="video-card">
-        <small>Saha Operasyonu 1</small>
-        <video controls><source src="komp1.mp4" type="video/mp4"></video>
-      </div>
-      <div class="video-card">
-        <small>Saha Operasyonu 2</small>
-        <video controls><source src="komp2.mp4" type="video/mp4"></video>
-      </div>
-      <div class="video-card">
-        <small>Saha Operasyonu 3</small>
-        <video controls><source src="komp3.mp4" type="video/mp4"></video>
-      </div>
+      <div class="video-card"><video controls><source src="kompresor-debi.mp4" type="video/mp4"></video></div>
+      <div class="video-card"><video controls><source src="komp1.mp4" type="video/mp4"></video></div>
+      <div class="video-card"><video controls><source src="komp2.mp4" type="video/mp4"></video></div>
+      <div class="video-card"><video controls><source src="komp3.mp4" type="video/mp4"></video></div>
     </div>
   </section>
 
 </div>
 
-<footer style="text-align: center; padding: 60px; color: var(--text-dim); font-size: 13px; border-top: 1px solid #1e293b;">
-  Susurluk Jeotermal Proje Teknik Dokümantasyonu © 2026
+<footer style="text-align: center; padding: 40px; color: var(--text-dim); font-size: 13px; border-top: 1px solid #1e293b; margin-top: 30px;">
+  © 2026 Susurluk Jeotermal Proje Teknik Dokümantasyonu
 </footer>
 
 </body>
